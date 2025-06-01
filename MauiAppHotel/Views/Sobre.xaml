@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre Nós"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource MidnightBlue}">
+            
+    
+    
+    <VerticalStackLayout 
+                         Padding="10"
+                         Spacing="10">
+
+        <Label Padding="10" 
+           Text="Sobre Nós"
+           FontFamily="Arial"
+           FontSize="35"
+           TextColor="{StaticResource White}" />
+
+        <Frame Padding="10" Margin="10" BackgroundColor="Purple">
+            <Grid 
+         RowDefinitions="Auto, Auto">
+
+                <Label Grid.Row="0" 
+                Text="Hotel:" 
+                         FontFamily="Times New Roman"
+FontSize="20"
+                TextColor="OrangeRed"/>
+
+                <Label Grid.Row="1" 
+Text="Bem-vindo ao nosso hotel, onde conforto, elegância e hospitalidade se encontram. Localizado em uma região privilegiada, oferecemos acomodações aconchegantes e serviços personalizados para tornar sua estadia inesquecível. Aqui, cada detalhe é pensado para o seu bem-estar. Venha viver essa experiência com a gente!
+" 
+TextColor="White"/>
+
+            </Grid>
+
+        </Frame>
+
+        <Frame Padding="10" Margin="10" BackgroundColor="Purple">
+            <Grid 
+         RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+
+                <Label Grid.Row="0" 
+                Text="Serviço de Atendimento ao Cliente (SAC)" 
+                         FontFamily="Times New Roman"
+FontSize="18"
+                TextColor="OrangeRed"/>
+
+                <Label Grid.Row="1" Margin="5"
+Text="Telefone: 0800 123 4567" 
+TextColor="White"/>
+                <Label Grid.Row="2" Margin="5"
+Text="E-mail: atendimento@hotelparaiso.com" 
+TextColor="White"/>
+                <Label Grid.Row="3" Margin="5"
+Text="Atendimento: Segunda a sexta, das 8h às 18h" 
+TextColor="White"/>
+                <Label Grid.Row="4" Margin="5"
+Text="Site: www.hotelparaiso.com/sac" 
+TextColor="White"/>
+                <Label Grid.Row="5" Margin="5"
+Text="Estamos à disposição para tirar dúvidas, receber sugestões ou resolver qualquer necessidade durante sua experiência conosco." 
+TextColor="White"/>
+
+            </Grid>
+
+        </Frame>
+
+        <Frame Padding="10" Margin="10" BackgroundColor="Purple">
+            <Grid 
+         RowDefinitions="Auto, Auto, Auto">
+
+                <Label Grid.Row="0" 
+                Text="Desenvolvido por:" 
+                       FontFamily="Times New Roman"
+                     FontSize="20"
+                TextColor="OrangeRed"/>
+
+                <Label Grid.Row="1" 
+Text="Guilherme L V. De Souza:" 
+TextColor="White"/>
+                <Label Grid.Row="2" 
+Text="2025" 
+TextColor="White"/>
+
+            </Grid>
+
+        </Frame>
+
+
+    </VerticalStackLayout>
+</ContentPage>

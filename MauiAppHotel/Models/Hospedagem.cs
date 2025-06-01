@@ -2,25 +2,23 @@
 {
     public class Hospedagem
     {
+        public Cliente Cliente { get; set; }
         public Quarto QuartoSelecionado { get; set; }
         public int QntAdultos { get; set; }
         public int QntCriancas { get; set; }
         public DateTime DataCheckIn { get; set; }
         public DateTime DataCheckOut { get; set; }
-        public int Estadia
-        {
-            get => DataCheckOut.Subtract(DataCheckIn).Days;
-        }
+
+        public int Estadia => (DataCheckOut - DataCheckIn).Days;
+
         public double ValorTotal
         {
             get
             {
-                double valor_adultos = QntAdultos * QuartoSelecionado.ValorDiariaAdulto;
-                double valor_criancas = QntCriancas * QuartoSelecionado.ValorDiariaCrianca;
+                double valorAdulto = QuartoSelecionado?.ValorDiariaAdulto ?? 0;
+                double valorCrianca = QuartoSelecionado?.ValorDiariaCrianca ?? 0;
 
-                double total = (valor_adultos + valor_criancas) * Estadia;
-
-                return total;
+                return ((valorAdulto * QntAdultos) + (valorCrianca * QntCriancas)) * Estadia;
             }
         }
     }

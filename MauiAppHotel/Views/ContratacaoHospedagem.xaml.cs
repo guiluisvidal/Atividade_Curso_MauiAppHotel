@@ -5,10 +5,19 @@ namespace MauiAppHotel.Views;
 public partial class ContratacaoHospedagem : ContentPage
 {
     App PropriedadesApp;
+    Cliente cliente;
 
-    public ContratacaoHospedagem()
-	{
-		InitializeComponent();
+    // Construtor sem argumentos (mantido por compatibilidade)
+    public ContratacaoHospedagem() : this(new Cliente())
+    {
+    }
+
+    // Construtor principal com Cliente
+    public ContratacaoHospedagem(Cliente clienteRecebido)
+    {
+        InitializeComponent();
+
+        cliente = clienteRecebido;
 
         PropriedadesApp = (App)Application.Current;
 
@@ -27,6 +36,7 @@ public partial class ContratacaoHospedagem : ContentPage
         {
             Hospedagem h = new Hospedagem
             {
+                Cliente = cliente,
                 QuartoSelecionado = (Quarto)pck_quarto.SelectedItem,
                 QntAdultos = Convert.ToInt32(stp_adultos.Value),
                 QntCriancas = Convert.ToInt32(stp_criancas.Value),
@@ -38,7 +48,6 @@ public partial class ContratacaoHospedagem : ContentPage
             {
                 BindingContext = h
             });
-
         }
         catch (Exception ex)
         {
@@ -54,5 +63,10 @@ public partial class ContratacaoHospedagem : ContentPage
 
         dtpck_checkout.MinimumDate = data_selecionada_checkin.AddDays(1);
         dtpck_checkout.MaximumDate = data_selecionada_checkin.AddMonths(6);
+    }
+
+    private void Button_Clicked_1(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Sobre());
     }
 }
